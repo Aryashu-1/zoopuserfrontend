@@ -1,11 +1,76 @@
-import React from 'react'
 
-const Filter = () => {
-  return (
-    <div>
-      Filter 
-    </div>
-  )
+import React, { useState } from 'react';
+interface FilterDialogProps {
+  onClose: () => void; 
 }
+const FilterDialog: React.FC<FilterDialogProps> = ({ onClose }) => {
+  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
-export default Filter
+  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value, checked } = event.target;
+    if (checked) {
+      setSelectedOptions((prevOptions) => [...prevOptions, value]);
+    } else {
+      setSelectedOptions((prevOptions) => prevOptions.filter((option) => option !== value));
+    }
+  };
+  const handleClose = () => {
+    console.log('Selected Options:', selectedOptions);
+    onClose(); 
+  };
+  return (
+    <div className="fixed top-0 left-0 w-full z-50 h-full flex items-center justify-center bg-gray-500 bg-opacity-50">
+      <div className="bg-white p-8 rounded shadow-md  transition-transform duration-300 transform hover:scale-105">
+        <h2 className="text-xl font-bold mb-4">Filter Options</h2>
+        <div className="flex flex-col">
+          <label className="inline-flex items-center">
+            <input
+              type="checkbox"
+              className="form-checkbox"
+              value="sortByDate"
+              onChange={handleCheckboxChange}
+            />
+            <span className="ml-2">Sort by Date</span>
+          </label>
+          <label className="inline-flex items-center">
+            <input
+              type="checkbox"
+              className="form-checkbox"
+              value="sortByPrice"
+              onChange={handleCheckboxChange}
+            />
+            <span className="ml-2">Sort by Price</span>
+          </label>
+          <label className="inline-flex items-center">
+            <input
+              type="checkbox"
+              className="form-checkbox"
+              value="sortByTime"
+              onChange={handleCheckboxChange}
+            />
+            <span className="ml-2">Sort by Time</span>
+          </label>
+          <label className="inline-flex items-center">
+            <input
+              type="checkbox"
+              className="form-checkbox"
+              value="sortByDistance"
+              onChange={handleCheckboxChange}
+            />
+            <span className="ml-2">Sort by Distance</span>
+          </label>
+        </div>
+        <div className="mt-6 flex justify-center">
+          <button
+            className="bg-blue-500 hover:bg-green-500 text-white px-4 py-2 rounded transition-colors duration-700"
+            onClick={handleClose}
+          >
+            Apply
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FilterDialog;
