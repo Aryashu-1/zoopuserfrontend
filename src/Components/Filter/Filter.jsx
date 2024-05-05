@@ -1,12 +1,11 @@
-
 import React, { useState } from 'react';
-interface FilterDialogProps {
-  onClose: () => void; 
-}
-const FilterDialog: React.FC<FilterDialogProps> = ({ onClose }) => {
-  const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+const Filter = () => {
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+
+
+  const handleCheckboxChange = (event) => {
     const { value, checked } = event.target;
     if (checked) {
       setSelectedOptions((prevOptions) => [...prevOptions, value]);
@@ -14,13 +13,15 @@ const FilterDialog: React.FC<FilterDialogProps> = ({ onClose }) => {
       setSelectedOptions((prevOptions) => prevOptions.filter((option) => option !== value));
     }
   };
+
   const handleClose = () => {
     console.log('Selected Options:', selectedOptions);
-    onClose(); 
+    onClose(); // Close the filter by calling the onClose function
   };
+
   return (
     <div className="fixed top-0 left-0 w-full z-50 h-full flex items-center justify-center bg-gray-500 bg-opacity-50">
-      <div className="bg-white p-8 rounded shadow-md  transition-transform duration-300 transform hover:scale-105">
+      <div className="bg-white p-8 rounded shadow-md transition-transform duration-300 transform hover:scale-105">
         <h2 className="text-xl font-bold mb-4">Filter Options</h2>
         <div className="flex flex-col">
           <label className="inline-flex items-center">
@@ -73,4 +74,4 @@ const FilterDialog: React.FC<FilterDialogProps> = ({ onClose }) => {
   );
 };
 
-export default FilterDialog;
+export default Filter;

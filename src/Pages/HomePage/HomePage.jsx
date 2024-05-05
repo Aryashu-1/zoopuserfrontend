@@ -6,10 +6,10 @@ import Filter from '../../Components/Filter/Filter'
 const HomePage = () => {
   return (
     <div>
-        <h1 className='text-3xl'>Home</h1>
-      <StoreProfileCard/>
+     
+      
       <SearchBar/>
-      <Filter/>
+      <StoreProfileCard/>
     </div>
   )
 }
