@@ -29,7 +29,7 @@ function App() {
           element: <SigninPage/>
         },
         {
-          path:'/store/:soreid',
+          path:'/store/:storeid',
           element:<CanteenCataloguePage/>
         },
         {
