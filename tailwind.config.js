@@ -19,8 +19,7 @@ export default {
         '300': '#b0b0b0',
       },
     },
-  },
-    
+  },   
   },
   plugins: [],
 }
