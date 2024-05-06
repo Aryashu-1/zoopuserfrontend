@@ -3,9 +3,9 @@ import HeartIcon from '../HeartIcon/HeartIcon';
 function StoreProfileCard() {
   return (
     <div className="flex flex-wrap justify-center max-h-[calc(100vh-128px)] m-4">
-      {[...Array(12)].map((_, index) => (
+    
         <div
-          key={index}
+         
           className="w-80 mx-4 my-4 overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl shadow-md transition-transform duration-700"
         >
           <div className="rounded-lg overflow-hidden">
@@ -42,7 +42,7 @@ function StoreProfileCard() {
             </div>
           </div>
         </div>
-      ))}
+ 
     </div>
   );
 }
