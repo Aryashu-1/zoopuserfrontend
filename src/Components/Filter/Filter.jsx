@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Filter = () => {
+const Filter = (props) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,10 +14,10 @@ const Filter = () => {
     }
   };
 
-  const handleClose = () => {
-    console.log('Selected Options:', selectedOptions);
-    setIsOpen(!isOpen) // Close the filter by calling the onClose function
-  };
+  // const handleClose = () => {
+  //   console.log('Selected Options:', selectedOptions);
+  //   setIsOpen(!isOpen) // Close the filter by calling the onClose function
+  // };
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 h-full flex items-center justify-center bg-gray-500 bg-opacity-50">
@@ -64,7 +64,7 @@ const Filter = () => {
         <div className="mt-6 flex justify-center">
           <button
             className="bg-zoop text-white px-4 py-2 rounded transition-colors duration-700"
-            onClick={handleClose}
+            onClick={props.handleClose}
           >
             Apply
           </button>
