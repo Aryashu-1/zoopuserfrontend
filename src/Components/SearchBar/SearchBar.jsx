@@ -43,6 +43,7 @@ const SearchBar = () => {
           </button>
       
       </div>
+
       <div className='mt-1 ml-[15px] '>
       <button
         className="mr-2"
@@ -52,7 +53,7 @@ const SearchBar = () => {
       </button>
       <p>Filter</p>
       {/* Render Filter component conditionally */}
-      {isOpen && <Filter />}
+      {isOpen && <Filter handleClose={handleClose}/>}
       </div>
       
     </div>
