@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import Filter from '../Filter/Filter';
-
-
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
