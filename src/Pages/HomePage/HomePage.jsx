@@ -15,7 +15,7 @@ const HomePage = () => {
       {
         
         Array.from({ length: storeCount }, (_, index) => (
-          <div><StoreProfileCard key={index} index={index} /></div>
+          <div key={index}><StoreProfileCard key={index} index={index} /></div>
           
         ))
       }

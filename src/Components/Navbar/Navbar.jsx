@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 const Navbar = () => {
   return (
-    <div classname='bg-zoop h-[74px] w-full p-2'>
-    <nav className=" shadow-md bg-zoop  py-3 ">
+    <div className='shadow-md bg-zoop h-[74px] w-full p-2'>
+    <nav className="  py-3 ">
       <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center justify-start text-white flex-grow">
           <svg
