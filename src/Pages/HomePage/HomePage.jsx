@@ -6,7 +6,6 @@ import Filter from '../../Components/Filter/Filter'
 const HomePage = () => {
   return (
     <div>
-     
       
       <SearchBar/>
       <StoreProfileCard/>

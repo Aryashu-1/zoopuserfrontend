@@ -12,13 +12,14 @@ export default {
       boxShadow: {
         '3xl': '0 4px 2px rgba(0, 0, 0, 0.25)'
 
-    },},
+    },
     colors: {
       zoop:"#38bdf8",
       gray: {
         '300': '#b0b0b0',
       },
     },
+  },   
   },
   plugins: [],
 }
