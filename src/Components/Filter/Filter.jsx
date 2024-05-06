@@ -16,7 +16,7 @@ const Filter = () => {
 
   const handleClose = () => {
     console.log('Selected Options:', selectedOptions);
-    onClose(); // Close the filter by calling the onClose function
+    setIsOpen(!isOpen) // Close the filter by calling the onClose function
   };
 
   return (
@@ -63,7 +63,7 @@ const Filter = () => {
         </div>
         <div className="mt-6 flex justify-center">
           <button
-            className="bg-blue-500 hover:bg-green-500 text-white px-4 py-2 rounded transition-colors duration-700"
+            className="bg-zoop text-white px-4 py-2 rounded transition-colors duration-700"
             onClick={handleClose}
           >
             Apply

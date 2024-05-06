@@ -6,12 +6,13 @@ const HeartIcon = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleClick = () => {
-    setIsLiked((prev) => !prev); // Toggle the value of isLiked
+
+    setIsLiked(!isLiked); // Toggle the value of isLiked
   };
 
   return (
     <AiFillHeart
-      className={`absolute top-2 right-2 cursor-pointer ${isLiked ? 'text-red-600' : 'text-white'} hover:text-red-600 transition-colors duration-300`}
+      className={`h-[38px] w-[30px]  absolute top-5 right-6 cursor-pointer ${isLiked ? 'text-red-600' : 'text-white'} active:text-red-600 transition-colors duration-300`}
       size={24}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

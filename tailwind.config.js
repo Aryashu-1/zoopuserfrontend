@@ -10,11 +10,12 @@ export default {
         '3xl': '0 6px 2px rgba(0, 0, 10, 0.25)'
       },
       boxShadow: {
-        '3xl': '0 4px 2px rgba(0, 0, 0, 0.25)'
+        '3xl': '0 4px 2px rgba(31, 31, 31, 0.55 )'
 
     },
     colors: {
       zoop:"#38bdf8",
+      open:"#1da042",
       gray: {
         '300': '#b0b0b0',
       },
