@@ -6,6 +6,7 @@ import { useState } from 'react'
 import Menu from '../../Components/Menu/Menu'
 
 const CanteenCataloguePage = () => {
+  const storeCount = 10
   const [vegClicked, setVegClicked] = useState(false);
   const [eggClicked, setEggClicked] = useState(false);
 
@@ -59,20 +60,31 @@ const CanteenCataloguePage = () => {
         </div>
         <h1>Veg</h1>
       </div>
-      <div className='flex h-[25px] text-red-600' >
+      <div className='flex h-[25px] text-red-600 mb-2' >
         <div className='flex justify-center ml-3 mr-2'>
           <button 
             className={`h-[20px] w-[20px] rounded-[2px] border-2 border-red-700 m-auto  ${eggClicked ? 'bg-red-600' : ''}`}
             onClick={handleEggClick}
-            disabled={eggClicked}
+           
           ></button>
         </div>
         <h1>Egg</h1>
       </div>
     </div>
+    <div>
     
+    <div className='overflow-auto  flex-grow h-screen bg-gray-100 py-1'>
+    
+  {
+    
+    Array.from({ length: storeCount }, (_, index) => (
+      <div key={index}><ProductCard key={index} index={index} /></div>
       
-      <ProductCard/>
+    ))
+  }
+  </div>
+    </div>
+   
       
     </div>
   )
