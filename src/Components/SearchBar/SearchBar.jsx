@@ -23,7 +23,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className='box-content mb-6  h-[50px] w-[350px] mt-[15px]  py-1  ml-[30px]'>
+    <div className='box-content mb-5  h-[50px] w-[350px] mt-[15px]  py-1  ml-[30px]'>
     <div className="flex  ">
       
         <div className="flex items-center rounded-[30px] mt-1 shadow-3xl  h-[40px] w-[270px] p-2 border-gray-300  border-[0.5px]">

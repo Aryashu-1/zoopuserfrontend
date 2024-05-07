@@ -12,7 +12,7 @@ const HeartIcon = () => {
 
   return (
     <AiFillHeart
-      className={`h-[38px] w-[30px]  absolute top-5 right-6 cursor-pointer ${isLiked ? 'text-red-600' : 'text-white'} active:text-red-600 transition-colors duration-300`}
+      className={`h-[38px] w-[30px]  absolute top-4 left-4 cursor-pointer ${isLiked ? 'text-red-600' : 'text-white'} active:text-red-600 transition-colors duration-300`}
       size={24}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
