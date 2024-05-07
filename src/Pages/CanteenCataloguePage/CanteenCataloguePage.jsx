@@ -24,7 +24,7 @@ const CanteenCataloguePage = () => {
   return (
     <div>
         <div>
-          <img className='h-[35px] w-[35px] pl-2 pt-2' src="https://static.thenounproject.com/png/234369-200.png" />
+          <img className='h-[30px] w-[35px] pl-2 pt-2' src="https://static.thenounproject.com/png/234369-200.png" />
         </div>
         <div className='shadow-3xl flex pb-2'> 
             <div className='pl-[40px] pt-1 '>
@@ -41,15 +41,10 @@ const CanteenCataloguePage = () => {
               </div>
               </div>
         </div>
-        {/* <div className='mt-4 ml-4 flex'>
-           <button className='rounded-[5px] p-1 border-2 shadow-2xl w-[30px] h-[30px] flex items-center'>
-             <svg  xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="288px" height="28px"><path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"/></svg>
-          </button>
-          <div className='ml-2 text-[18px] font-medium'><h3>Menu</h3></div>
-        </div> */}
+       
         <Menu/>
         <SearchBar/>
-        <div className='flex w-[200px] ml-9 '> 
+        <div className='flex w-[200px] ml-9 mb-1 '> 
       <div className='flex h-[25px]  text-green-600'>
         <div className='flex justify-center ml-3 mr-2'>
           <button 
@@ -73,7 +68,7 @@ const CanteenCataloguePage = () => {
     </div>
     <div>
     
-    <div className='overflow-auto  flex-grow h-screen bg-gray-100 py-1'>
+    <div className='overflow-auto  flex-grow-2 h-screen bg-gray-100 py-1'>
     
   {
     
@@ -82,6 +77,7 @@ const CanteenCataloguePage = () => {
       
     ))
   }
+  
   </div>
     </div>
    
