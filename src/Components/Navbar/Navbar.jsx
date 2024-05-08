@@ -25,12 +25,23 @@ const Navbar = () => {
           <span className="text-lg font-bold">Zoopx</span>
         </div>
         <div className="flex items-center justify-end text-white space-x-4">
-          <button className="text-white focus:outline-none transform hover:scale-110 transition-transform">
-            <FontAwesomeIcon icon={faShoppingCart} size="2x" />
-          </button>
-          <button className="text-white focus:outline-none transform hover:scale-110 transition-transform">
-            <FontAwesomeIcon icon={faUserCircle} size="2x" />
-          </button>
+            <div className='flex '>
+              <button className="text-white mx-2 focus:outline-none transform hover:scale-110 transition-transform">
+                <FontAwesomeIcon icon={faUserCircle} size="2x" />
+              </button>
+              <div className="hidden md:flex md:max-xl:flex hover:cursor-pointer">
+                <a href='/profile' className="md:text-white">SignIn</a>
+              </div>
+            </div>
+            <div className='flex '>
+              <button className="text-white mx-2 focus:outline-none transform hover:scale-110 transition-transform">
+                <FontAwesomeIcon icon={faShoppingCart} size="2x" />
+              </button>
+              <div className="hidden md:flex md:max-xl:flex hover:cursor-pointer">
+                <a href='/cart' className="md:text-white">Cart</a>
+              </div>
+            </div>
+          
         </div>
       </div>
     </nav>

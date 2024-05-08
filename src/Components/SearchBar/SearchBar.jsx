@@ -18,8 +18,8 @@ const SearchBar = () => {
     setIsOpen(true);
   };
 
-  const handleClose = () => {
-    setIsOpen(false);
+  const handleClose = (close) => {
+    setIsOpen(close);
   };
 
   return (

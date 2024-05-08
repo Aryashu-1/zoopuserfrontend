@@ -64,7 +64,7 @@ const Filter = (props) => {
         <div className="mt-6 flex justify-center">
           <button
             className="bg-zoop text-white px-4 py-2 rounded transition-colors duration-700"
-            onClick={props.handleClose}
+            onClick={()=>props.handleClose(false)}
           >
             Apply
           </button>

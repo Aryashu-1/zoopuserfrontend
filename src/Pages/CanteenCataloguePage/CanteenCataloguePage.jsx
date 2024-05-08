@@ -4,27 +4,41 @@ import SearchBar from '../../Components/SearchBar/SearchBar'
 import { useState } from 'react'
 
 import Menu from '../../Components/Menu/Menu'
+import { NavLink } from 'react-router-dom'
 
 const CanteenCataloguePage = () => {
   const storeCount = 10
   const [vegClicked, setVegClicked] = useState(false);
   const [eggClicked, setEggClicked] = useState(false);
+  const [option, setOption] = useState('')
 
   const handleVegClick = () => {
     setVegClicked(!vegClicked);
-
+    if(vegClicked === false){
+      setEggClicked(false)
+      setOption('Veg')
+      
+    }
+      
   };
 
   const handleEggClick = () => {
     setEggClicked(!eggClicked);
-    
+    if(eggClicked === false ){
+      setVegClicked(false)
+      setOption('Egg')
+      
+    }
 
   };
   
   return (
     <div>
         <div>
+          <NavLink to={'/'}>
           <img className='h-[30px] w-[35px] pl-2 pt-2' src="https://static.thenounproject.com/png/234369-200.png" />
+          </NavLink>
+          
         </div>
         <div className='shadow-3xl flex pb-2'> 
             <div className='pl-[40px] pt-1 '>
@@ -48,7 +62,7 @@ const CanteenCataloguePage = () => {
       <div className='flex h-[25px]  text-green-600'>
         <div className='flex justify-center ml-3 mr-2'>
           <button 
-            className={`h-[20px] w-[20px] rounded-[2px] border-2 border-green-600 m-auto  ${vegClicked ? 'bg-green-600' : ''}`}
+            className={`h-[20px] w-[20px] rounded-[2px] border-2 border-green-600 m-auto  ${vegClicked ? 'bg-green-600 border-2 border-green-600 ' : ''}`}
             onClick={handleVegClick}
             
           ></button>
