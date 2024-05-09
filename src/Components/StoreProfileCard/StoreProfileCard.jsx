@@ -28,7 +28,7 @@ function StoreProfileCard(index) {
                 </div>
               </div>
               <div>
-                  <p className='ml-3 text-[17px] font-semibold'><a className='text-open '>Opened</a> . Closes at 4pm</p>
+                  <p className='ml-3 text-[17px] font-semibold'><span className='text-open'>Opened</span>  Closes at 4pm</p>
                 </div>
             </div>
             </NavLink>
