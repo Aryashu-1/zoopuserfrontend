@@ -16,7 +16,7 @@ function RazorpayButton() {
     // POST - http://127.0.0.1:8000/user/cart 
 
 
-
+    // Create a Razorpay Order
     const response = await fetch(createOrderURL, {
       method: "POST",
       body: JSON.stringify({
@@ -30,7 +30,9 @@ function RazorpayButton() {
     });
     const order = await response.json();
 
-    const options = {
+
+    // Define options for the window
+    const options = { 
       key: "rzp_test_co2pYMRyXOG8Ly", 
       amount: amount*100, 
       currency: "INR",
@@ -39,7 +41,8 @@ function RazorpayButton() {
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_JDZNk3t8tDryuqT7VWS_TWgEZAJXxBxAi3QCi3wpfQ&s",
       order_id: order.id, 
       handler: async function (response) {
-
+        
+        // call back function after successful payment
         const valRes = await fetch(validateOrderURL,
           {
             method: "POST",
@@ -60,7 +63,7 @@ function RazorpayButton() {
         address: "Razorpay Corporate Office",
       },
       theme: {
-        color: "#38bdf8",
+        color: "#38bdf8",//This is zoop color, but can be changed
       },
     };
 
