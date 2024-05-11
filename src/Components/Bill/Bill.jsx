@@ -1,10 +1,11 @@
 import React from 'react'
-import Razorpay from '../Razorpay/Razorpay'
+import RazorpayButton from '../RazorpayButton/RazorpayButton'
+
 
 const Bill = () => {
   return (
     <div>Bill
-        <Razorpay/>
+        <RazorpayButton />
     </div>
   )
 }
