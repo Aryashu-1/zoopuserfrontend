@@ -20,7 +20,6 @@ const SearchBar = () => {
   ];
 
   useEffect(() => {
-    // Add event listener to close the suggestion box when clicking outside
     const handleClickOutside = (event) => {
       if (suggestionsRef.current && !suggestionsRef.current.contains(event.target)) {
         setSuggestions([]);
@@ -35,13 +34,9 @@ const SearchBar = () => {
   const handleChange = (event) => {
     const { value } = event.target;
     setSearchQuery(value);
-
-    // Filter food items based on the input value
     const filteredItems = foodItems.filter((item) =>
       item.toLowerCase().startsWith(value.toLowerCase())
     );
-
-    // Set suggestions if the search query is not empty
     setSuggestions(value.trim() !== '' ? filteredItems : []);
   };
 
