@@ -143,7 +143,7 @@ function RazorpayButton() {
 
   return (
     <div>
-      <button onClick={handlePayment}>Pay</button>
+      <button onClick={handlePayment}>Pay Now</button>
     </div>
   )
 }
