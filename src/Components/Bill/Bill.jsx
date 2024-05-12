@@ -1,5 +1,4 @@
 import React from 'react'
-import Razorpay from '../Razorpay/Razorpay'
 import { useState } from 'react'
 import RazorpayButton from '../RazorpayButton/RazorpayButton'
 const Bill = () => {
@@ -96,12 +95,12 @@ const Bill = () => {
               <input value={cookingInstructions} onChange={handleChange} className='h-[69px] w-[288px] rounded-[10px] ml-3 pl-6' type='text' placeholder='Add Cooking Instructions' ></input>
             </div>
           </div>
-          <div className='m-7'>
+          <div className='m-7 pb-5'>
             <h1 className='font-semibold text-[22px] mb-2'>TOATL BILL :</h1>
             <div className='h-[132px] w-[291px] bg-white rounded-[10px] flex items-center justify-center'>
-              <div>
+              <div >
                 <h1>Total Amount : Rs.100</h1>
-                <button className='bg-zoop p-2 flex items-center justify-center w-[141px] h-[36px] rounded-[7px] m-3 text-white font-semibold'>PAY NOW</button>
+                <button className='bg-zoop p-2 flex items-center justify-center w-[141px] h-[36px] rounded-[7px] m-3 text-white font-semibold'><RazorpayButton /></button>
               </div>
             </div>
           </div>
@@ -109,9 +108,7 @@ const Bill = () => {
       </div>
         
    
-    <div>Bill
-        <RazorpayButton />
-    </div>
+  </div>
   )
 }
 
