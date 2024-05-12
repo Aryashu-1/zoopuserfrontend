@@ -8,6 +8,7 @@ import CanteenCataloguePage from "./Pages/CanteenCataloguePage/CanteenCatalogueP
 import CartPage from "./Pages/CartPage/CartPage"
 import ProfilePage from "./Pages/ProfilePage/ProfilePage"
 import OrdersPage from "./Pages/OrdersPage/OrdersPage"
+import Bill from "./Components/Bill/Bill"
 
 function App() {
 
@@ -34,7 +35,12 @@ function App() {
         },
         {
           path:'/cart',
-          element:<CartPage/>
+          element:<CartPage/>,
+          
+        },
+        {
+          path:'cart/:cartid',
+                element:<Bill/>
         },
         {
           path:'/profile',
