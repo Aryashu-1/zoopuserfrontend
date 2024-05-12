@@ -1,11 +1,14 @@
 import React from 'react'
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 const CartCard = () => {
+  const nav = useNavigate()
   const [expanded, setExpanded] = useState(false);
   const checkout = () => {
     console.log('checkout')
+    
+    nav('/cart/:cartid')
   }
   const deleteCart = () => {
     console.log('delete')
@@ -39,7 +42,7 @@ const CartCard = () => {
       {expanded && (
               <div className='flex mt-4 justify-center items-center'>
                 <button className=" text-red-600 px-2  rounded-md mx-3 border-red-600 shadow-sm shadow-red-500 w-[106px] h-[28px]" onClick={deleteCart}>Delete</button>
-                <a href='/cart/:cartid'><button className="bg-zoop text-white px-2 rounded-md mx-3 w-[106px] h-[28px] shadow-sm shadow-zoop" onClick={checkout}>Checkout</button></a>
+                <a ><button className="bg-zoop text-white px-2 rounded-md mx-3 w-[106px] h-[28px] shadow-sm shadow-zoop" onClick={checkout}>Checkout</button></a>
               </div>
       )}
       

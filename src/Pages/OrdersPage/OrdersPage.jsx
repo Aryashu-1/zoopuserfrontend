@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import OrderCard from '../../Components/OrderCard/OrderCard'
-
+import axios from 'axios'
 const OrdersPage = () => {
+  
+      
   return (
     <div>
       Orders
-      <OrderCard/>
+      <button >GetOrders</button>
+      
     </div>
   )
 }

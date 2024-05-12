@@ -9,6 +9,7 @@ import CartPage from "./Pages/CartPage/CartPage"
 import ProfilePage from "./Pages/ProfilePage/ProfilePage"
 import OrdersPage from "./Pages/OrdersPage/OrdersPage"
 import Bill from "./Components/Bill/Bill"
+import OrderCard from "./Components/OrderCard/OrderCard"
 
 function App() {
 
@@ -47,8 +48,12 @@ function App() {
           element:<ProfilePage/>
         },
         {
-          path:'/orders/:orderid',
+          path:'/orders',
           element:<OrdersPage/>
+        },
+        {
+          path:'/orders/:orderid',
+          element:<OrderCard/>
         }
       ]
     }

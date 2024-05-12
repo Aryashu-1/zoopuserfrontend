@@ -53,7 +53,7 @@ const Bill = () => {
           </div>
           
       </div>
-      <div className='bg-[#d1d1d1]'>
+      <div className=''>
         <div className='pt-16 px-4'>
             <div className="w-[340px] mx-auto bg-white shadow-2xl rounded-[10px] p-2 " >
               <table className="w-full ">
@@ -100,7 +100,7 @@ const Bill = () => {
             <div className='h-[132px] w-[291px] bg-white rounded-[10px] flex items-center justify-center'>
               <div >
                 <h1>Total Amount : Rs.100</h1>
-                <button className='bg-zoop p-2 flex items-center justify-center w-[141px] h-[36px] rounded-[7px] m-3 text-white font-semibold'><RazorpayButton /></button>
+                <RazorpayButton />
               </div>
             </div>
           </div>
