@@ -11,7 +11,7 @@ const HeartIcon = () => {
 
   return (
     <AiFillHeart
-      className={`h-[34px] w-[26px] absolute top-4 right-4 cursor-pointer ${
+      className={`h-[34px] w-[26px] absolute top-4 left-4 cursor-pointer ${
         isLiked
           ? 'text-red-600 transform scale-110 transition-transform duration-400'
           : 'text-white'
