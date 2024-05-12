@@ -43,7 +43,7 @@ const ProductCard = () => {
                 <div className='w-[46px] h-[26px] text-center'>
                   <h1 className='text-[17px]'>{count}</h1>
                 </div>
-                <button className='bg-zoop w-[25px] h-[26px] font-extrabold rounded-r-[10px] flex' onClick={increment}>
+                <button className='bg-zoop w-[25px] h-[26px] font-extrabold rounded-r-[10px] flex items-center justify-center' onClick={increment}>
                   +
                 </button>
               </div>
