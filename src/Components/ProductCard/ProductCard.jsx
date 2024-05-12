@@ -37,13 +37,13 @@ const ProductCard = () => {
             )}
             {count !== 0 && (
               <div className='flex h-[30px] w-[100px] mt-3'>
-                <button className='w-[25px] items-center justify-center h-[26px] rounded-l-[10px] font-extrabold bg-zoop' onClick={decrement}>
+                <button className='w-[25px]  h-[26px] rounded-l-[10px] font-extrabold bg-zoop' onClick={decrement}>
                   -
                 </button>
-                <div className='w-[46px] h-[26px] text-center items-center justify-center'>
+                <div className='w-[46px] h-[26px] text-center '>
                   <h1 className='text-[17px]'>{count}</h1>
                 </div>
-                <button className='bg-zoop  w-[25px] h-[26px] font-extrabold rounded-r-[10px] flex items-center justify-center' onClick={increment}>
+                <button className='bg-zoop  w-[25px] h-[26px] font-extrabold rounded-r-[10px] flex' onClick={increment}>
                   +
                 </button>
               </div>

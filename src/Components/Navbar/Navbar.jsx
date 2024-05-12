@@ -35,7 +35,7 @@ const Navbar = () => {
             </div>
             <div className='flex '>
               <button className="text-white mx-2 focus:outline-none transform hover:scale-110 transition-transform">
-                <a href='/cart'><FontAwesomeIcon icon={faShoppingCart} size="2x" /></a>
+              <FontAwesomeIcon icon={faShoppingCart} size="2x" />
               </button>
               <div className="hidden md:flex md:max-xl:flex hover:cursor-pointer">
                 <a href='/cart' className="md:text-white">Cart</a>
