@@ -1,8 +1,10 @@
 import React from 'react'
 import useRazorpay from "react-razorpay";
 import axios from 'axios';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function RazorpayButton() {
+  const nav = useNavigate()
 
   const [Razorpay] = useRazorpay();
   const createOrderURL = "http://localhost:8000/payment/order"
@@ -73,6 +75,7 @@ function RazorpayButton() {
       },
     });
     const order = await response.json();
+    console.log(order)
     // Step 2 Ends
 
     // Step 3 Complete Payment
@@ -102,8 +105,11 @@ function RazorpayButton() {
             },
           }
         )
+        
         const razorPaymentId = await valRes.json()
-
+        
+        
+        console.log(razorPaymentId)
         if(razorPaymentId === null){
           // redirect to a failure page
           console.log("Payment failed")
@@ -111,6 +117,8 @@ function RazorpayButton() {
         // Step 4 ends
 
         // Redirect to the QR page/ component
+        nav('/orders')
+        
       },
       prefill: {
         name: "Piyush Garg",// change this to actual user name
@@ -138,12 +146,13 @@ function RazorpayButton() {
     });
 
     rzp1.open();
+    
   };
 
 
   return (
     <div>
-      <button onClick={handlePayment}>Pay Now</button>
+      <button className='bg-zoop p-2 flex items-center justify-center w-[141px] h-[36px] rounded-[7px] m-3 text-white font-semibold' onClick={handlePayment}>Pay Now</button>
     </div>
   )
 }
