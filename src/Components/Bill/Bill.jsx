@@ -1,6 +1,7 @@
 import React from 'react'
 import Razorpay from '../Razorpay/Razorpay'
 import { useState } from 'react'
+import RazorpayButton from '../RazorpayButton/RazorpayButton'
 const Bill = () => {
   const [count, setCount] = useState(0);
 
@@ -42,6 +43,7 @@ const Bill = () => {
     console.log(cookingInstructions)
   };
   return (
+
     <div className=''>
       <div className='flex text-center shadow-xl pb-3'> 
           <a href='/cart'>
@@ -106,7 +108,9 @@ const Bill = () => {
 
       </div>
         
-      
+   
+    <div>Bill
+        <RazorpayButton />
     </div>
   )
 }
