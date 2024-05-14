@@ -1,16 +1,52 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProductCard from '../../Components/ProductCard/ProductCard'
 import SearchBar from '../../Components/SearchBar/SearchBar'
 import { useState } from 'react'
+import axios from 'axios'
 
 import Menu from '../../Components/Menu/Menu'
 import { NavLink } from 'react-router-dom'
 
 const CanteenCataloguePage = () => {
-  const storeCount = 10
+  const [products,setProducts] = useState([])
   const [vegClicked, setVegClicked] = useState(false);
   const [eggClicked, setEggClicked] = useState(false);
   const [option, setOption] = useState('')
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const data = {
+          storeId: "663cc03557f2ea22c9a5918b",
+        };
+
+        // Construct query parameters from data object
+        const queryParams = Object.keys(data)
+          .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+          .join('&');
+
+        const url = `http://127.0.0.1:8000/store/product?${queryParams}`;
+
+        const requestOptions = {
+          method: 'GET',
+          headers: myHeaders,
+          redirect: 'follow'
+        };
+
+        const response = await fetch(url, requestOptions);
+        const result = await response.json();
+        setProducts([...result])
+      } catch (error) {
+        console.error('error', error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
 
   const handleVegClick = () => {
     setVegClicked(!vegClicked);
@@ -86,10 +122,11 @@ const CanteenCataloguePage = () => {
     
   {
     
-    Array.from({ length: storeCount }, (_, index) => (
-      <div key={index}><ProductCard key={index} index={index} /></div>
+    // Array.from({ length: storeCount }, (_, index) => (
+    //   <div key={index}><ProductCard key={index} index={index} /></div>
       
-    ))
+    // ))
+    products.map((product,idx)=>(<div key={idx}><ProductCard name={product.name} image={product.image} key={idx}/></div>))
   }
   
   </div>
