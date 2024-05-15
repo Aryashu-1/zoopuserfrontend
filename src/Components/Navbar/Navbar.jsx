@@ -38,7 +38,7 @@ const Navbar = () => {
 
 
             </svg>
-            <span className="text-lg font-bold">Zoopx</span>
+            <NavLink to={'/'} className=" hover:cursor-pointer text-lg font-bold">Zoopx</NavLink>
           </div>
           <div className="flex items-center justify-end text-white space-x-4">
               <div className='flex ' >
@@ -46,8 +46,8 @@ const Navbar = () => {
                   <FontAwesomeIcon icon={faUserCircle} size="2x" onClick={navigateTo}/>
                 </button>
                 <div className="hidden md:flex md:max-xl:flex hover:cursor-pointer">
-                  {user.username&& <a href='/profile' className="md:text-white">Hello,{user.username}</a>}
-                  {user.username === undefined && <a href='/signin' className="md:text-white">SignIn</a>}
+                  {user.name&& <NavLink href='/profile' className="md:text-white">Hello,{user.name}</NavLink>}
+                  {user.name === undefined && <NavLink href='/signin' className="md:text-white">SignIn</NavLink>}
                 </div>
               </div>
               <div className='flex '>

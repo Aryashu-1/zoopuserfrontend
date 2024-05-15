@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
+import axios from "axios";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UserContext } from "../../Contexts/UserContext/UserContext";
 
@@ -13,13 +14,20 @@ function Signin() {
   let navigate = useNavigate();
 
 let [user,setUser]= useContext(UserContext)
+let [flag,setFlag] = useState(0)
 
-
-  function handleFormSubmit(User) {
+  async function handleFormSubmit(User) {
     console.log(User)
+    let res = await axios.post("http://127.0.0.1:8000/user/signin",User)
+    if(res.data.length === 0 ){
+        setFlag(1)
+    }
+    else{
+      setFlag(0)
+      setUser(res.data)
+      navigate('/')
+    }
     
-    setUser(User)
-    navigate('/')
   }
   return (
     <div className=" h-screen ">
@@ -33,16 +41,19 @@ let [user,setUser]= useContext(UserContext)
         <div className="text-center"> <h1 className=" mx-6 my-3 font-semibold text-2xl">Sign In</h1></div>
         
         <form className="px-10 m-2" onSubmit={handleSubmit(handleFormSubmit)}>
+          {
+            flag=== 1 && <h1 className="text-red-700 font-semibold">Invalid Details</h1>
+          }
           <div className="py-3">
             {" "}
-            <h1 className="text-xl font-semibold">Username</h1>
+            <h1 className="text-xl font-semibold">E-mail</h1>
             <input
               className=" w-full p-2 rounded-md border-2 border-black"
               type="text"
-              {...register("username", { required: true })}
+              {...register("email", { required: true })}
             ></input>
           </div>
-          {errors.Username?.type === "required" && (
+          {errors.email?.type === "required" && (
             <h3 className=" text-red-700">*required</h3>
           )}
           <div className="py-3">
@@ -73,12 +84,12 @@ let [user,setUser]= useContext(UserContext)
         </form>
         <p className="text-center text-lg py-3">
           Don't have an account ?
-          <NavLink
+          <button
             to="/Signup"
             className="underline px-3 text-blue-500 font-semibold text-lg"
           >
             Sign up
-          </NavLink>
+          </button>
         </p>
       </div>
       </div>

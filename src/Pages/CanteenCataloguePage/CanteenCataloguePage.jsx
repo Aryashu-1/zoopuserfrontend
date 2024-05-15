@@ -5,22 +5,24 @@ import { useState } from 'react'
 import axios from 'axios'
 
 import Menu from '../../Components/Menu/Menu'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 
-const CanteenCataloguePage = () => {
+const CanteenCataloguePage = (props) => {
   const [products,setProducts] = useState([])
   const [vegClicked, setVegClicked] = useState(false);
   const [eggClicked, setEggClicked] = useState(false);
   const [option, setOption] = useState('')
   console.log(products)
+  const id = useParams()
   useEffect(() => {
     async function fetchData() {
       try {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
-
+        
+      
         const data = {
-          storeId: "663cc03557f2ea22c9a5918b",
+          storeId: id.storeid  ,
         };
 
         // Construct query parameters from data object

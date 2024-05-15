@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import RazorpayButton from '../RazorpayButton/RazorpayButton'
+import { NavLink } from 'react-router-dom';
 const Bill = () => {
   const [count, setCount] = useState(0);
 
@@ -46,9 +47,9 @@ const Bill = () => {
     <div className='md:flex md:items-center md:justify-center'>
       <div >
         <div className='flex text-center shadow-xl pb-3'> 
-            <a href='/cart'>
+            <NavLink href='/cart'>
               <img className='h-[35px] w-[35px] pl-2 pt-3' src="https://static.thenounproject.com/png/234369-200.png" />
-            </a>
+            </NavLink>
             <div className='ml-2  pl-2 pt-2 '>
               <h1 className='text-[23px]' >Bill</h1>
             </div>
