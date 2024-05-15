@@ -33,8 +33,9 @@ const CanteenCataloguePage = () => {
   };
   
   return (
-    <div>
-        <div>
+  <div className='flex items-center justify-center'>
+    <div className='w-[800px]'>
+        <div className='md:hidden'>
           <NavLink to={'/'}>
           <img className='h-[30px] w-[35px] pl-2 pt-2' src="https://static.thenounproject.com/png/234369-200.png" />
           </NavLink>
@@ -58,7 +59,7 @@ const CanteenCataloguePage = () => {
        
         <Menu/>
         <SearchBar/>
-        <div className='flex w-[200px] ml-9 mb-1 '> 
+        <div className='flex w-[200px] ml-9 mb-1  md:mt-0 '> 
       <div className='flex h-[25px]  text-green-600'>
         <div className='flex justify-center ml-3 mr-2'>
           <button 
@@ -82,12 +83,16 @@ const CanteenCataloguePage = () => {
     </div>
     <div>
     
-    <div className='overflow-auto  flex-grow-2 h-screen bg-gray-100 py-1'>
+    <div className='overflow-auto   flex-grow-2 h-screen bg-gray-100 py-1'>
+      <div className='w-full flex items-center justify-center font-semibold text-[18px]'>
+        <h1 className='m-auto'>--DOSA's--</h1>
+      </div>
+      
     
   {
     
     Array.from({ length: storeCount }, (_, index) => (
-      <div key={index}><ProductCard key={index} index={index} /></div>
+      <div key={index} ><ProductCard key={index} index={index} /></div>
       
     ))
   }
@@ -97,6 +102,8 @@ const CanteenCataloguePage = () => {
    
       
     </div>
+  </div>
+    
   )
 }
 

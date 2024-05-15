@@ -56,7 +56,7 @@ const SearchBar = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className='justify-center box-content mb-5 h-[50px] w-[80vw] md:w-[500px] mt-[15px] py-1 ml-[30px]'>
+      <div className='justify-center box-content mb-5 h-[50px] w-[80vw] md:w-[500px] mt-[15px] md:mt-0 py-1 ml-[30px]'>
         <div className="flex justify-center w-[80vm] md:w-[500px] relative">
           <div className="flex items-center rounded-[30px] mt-1 shadow-3xl h-[45px] w-[546px] p-2 border-gray-300 border-[0.5px]">
             <input
