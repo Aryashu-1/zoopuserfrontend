@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import HeartIcon from '../HeartIcon/HeartIcon';
 
-const ProductCard = () => {
+const ProductCard = (props) => {
   const [count, setCount] = useState(0);
 
   function increment() {
@@ -20,7 +20,7 @@ const ProductCard = () => {
         <div className="flex p-2 ">
           <div className=''>
             <img
-              src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg"
+              src={props.image}
               alt="Restaurant"
               className="w-[128px] h-[126px] md:h-[98px] md:rounded-[20px] object-cover rounded-[15px]"
             />
