@@ -2,8 +2,20 @@ import React, { useContext } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { UserContext } from '../../Contexts/UserContext/UserContext';
+import { NavLink, useNavigate } from 'react-router-dom';
 const Navbar = () => {
+  const nav = useNavigate()
   let [user,setUser] = useContext(UserContext)
+  function navigateTo(){
+    console.log(user)
+    if(user === null){
+      nav('/signin')
+    }
+    else{
+      nav('/profile')
+    }
+    
+  }
   return (
     <div className='shadow-md bg-zoop h-[54px] w-full p-1'>
     {
@@ -31,18 +43,19 @@ const Navbar = () => {
           <div className="flex items-center justify-end text-white space-x-4">
               <div className='flex ' >
                 <button className="text-white mx-2 focus:outline-none transform hover:scale-110 transition-transform">
-                  <FontAwesomeIcon icon={faUserCircle} size="2x" />
+                  <FontAwesomeIcon icon={faUserCircle} size="2x" onClick={navigateTo}/>
                 </button>
                 <div className="hidden md:flex md:max-xl:flex hover:cursor-pointer">
-                  <a href='/profile' className="md:text-white">SignIn</a>
+                  {user.username&& <a href='/profile' className="md:text-white">Hello,{user.username}</a>}
+                  {user.username === undefined && <a href='/signin' className="md:text-white">SignIn</a>}
                 </div>
               </div>
               <div className='flex '>
                 <button className="text-white mx-2 focus:outline-none transform hover:scale-110 transition-transform">
-                  <a href='/cart'><FontAwesomeIcon icon={faShoppingCart} size="2x" /></a>
+                  <NavLink to={'/cart'}><FontAwesomeIcon icon={faShoppingCart} size="2x" /></NavLink>
                 </button>
                 <div className="hidden md:flex md:max-xl:flex hover:cursor-pointer">
-                  <a href='/cart' className="md:text-white">Cart</a>
+                  <NavLink to={'/cart'} className="md:text-white"> Cart</NavLink>
                 </div>
               </div>
             

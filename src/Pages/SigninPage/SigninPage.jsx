@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
+import { UserContext } from "../../Contexts/UserContext/UserContext";
+
 
 function Signin() {
   let {
@@ -10,15 +12,14 @@ function Signin() {
   } = useForm();
   let navigate = useNavigate();
 
-let [user,setUser] = useState([])
-
+let [user,setUser]= useContext(UserContext)
 
 
   function handleFormSubmit(User) {
     console.log(User)
-    setUser(User)
     
-   
+    setUser(User)
+    navigate('/')
   }
   return (
     <div className=" h-screen ">
