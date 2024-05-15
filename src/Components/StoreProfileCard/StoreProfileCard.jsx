@@ -1,14 +1,14 @@
 import HeartIcon from '../HeartIcon/HeartIcon';
 import { NavLink } from 'react-router-dom';
 
-function StoreProfileCard({ index }) {
+function StoreProfileCard(props) {
   return (
     <div className='justify-center'>
     <div className="">
       <div className="bg-white md:w-[291.5px] md:h-[271.5px] w-[231.5px] h-[281.5px] rounded-[24px] mx-auto my-[30px] drop-shadow-lg border-black overflow-hidden transform hover:scale-105 hover:cursor-pointer shadow-2xl transition-transform duration-700">
         <div className="p-3 h-full flex flex-col justify-between">
           <div className=''>
-            <NavLink to={`store/${index}`}>
+            <NavLink to={`store/${props.index}`}>
               <img
                 src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg"
                 alt="Restaurant"
@@ -17,7 +17,7 @@ function StoreProfileCard({ index }) {
             </NavLink>
             <HeartIcon />
           </div>
-          <NavLink to={`store/${index}`} className="flex-grow">
+          <NavLink to={`store/${props.index}`} className="flex-grow">
             <div className="flex flex-col h-full justify-between">
               <div>
                 <h3 className="md:text-[19px] font-semibold mt-1 ml-3">Gandikota Dosa</h3>

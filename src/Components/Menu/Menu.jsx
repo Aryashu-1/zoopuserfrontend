@@ -31,7 +31,7 @@ const Menu = () => {
       }
 
       {isActive && 
-      <div className='fixed  w-[100%] h-[100%] bg-gray-200 bg-opacity-50 z-20'>
+      <div className='fixed    w-[100%] h-[100%] bg-gray-200 bg-opacity-50 z-20'>
         <div className='z-20 w-[50%] h-[100%] bg-zoop rounded-r-lg animate-[wiggle_0.49s]'>
           <div className='w-[100%] p-2 flex flex-row justify-start items-center gap-2'>
             <svg onClick={closeMenu} fill="#000000" height="15px" width="15px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
