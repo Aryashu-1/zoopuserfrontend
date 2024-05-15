@@ -3,13 +3,14 @@ import StoreProfileCard from '../../Components/StoreProfileCard/StoreProfileCard
 import SearchBar from '../../Components/SearchBar/SearchBar';
 import { NavLink } from 'react-router-dom';
 import { UserContext } from '../../Contexts/UserContext/UserContext';
+import { StoresContext } from '../../Contexts/StoresContext/StoresContext';
 
 
 const HomePage = () => {
   const storeCount = 10;
   let [user,setUser] = useContext(UserContext)
   console.log(user)
-  const [stores,setStores] = useState([])
+  const [stores,setStores] = useContext(StoresContext)
 
   useEffect(() => {
     async function fetchData() {
@@ -48,7 +49,7 @@ const HomePage = () => {
           //     <StoreProfileCard index={index} />
           //   </div>
           // ))
-            stores.map((val,key)=>(<div key={key}><StoreProfileCard index={key} key={key}/></div>))
+            stores.map((val,key)=>(<div key={key}><StoreProfileCard store={val} index={key} key={key}/></div>))
 
           }
         </div>

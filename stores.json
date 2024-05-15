@@ -1,0 +1,155 @@
+[{
+    
+    "name":"Gandikota Dosa",
+    "password":"aryashu1",
+    "rating":0,
+    "location":"Inside Annapurna Canteen",
+    "isOpen":true,
+    "phoneNumber":"9010942283",
+    "email":"aryashu448@gmail.com",
+    "adminName":"Ashray"
+    },
+    {
+    
+    "name":"Tea Time",
+    "password":"aryashu1",
+    "rating":0,
+    "location":"Opposite SAC Stage",
+    "isOpen":true,
+    "phoneNumber":"9010942283",
+    "email":"aryashu448@gmail.com",
+    "adminName":"Ashray"
+    },
+        {
+    
+    "name":"Coco Cola",
+    "password":"aryashu1",
+    "rating":0,
+    "location":"Near Jacks",
+    "isOpen":true,
+    "phoneNumber":"9010942283",
+    "email":"aryashu448@gmail.com",
+    "adminName":"Ashray"
+    },
+    {
+    
+        "name":"Juice Point",
+        "password":"aryashu1",
+        "rating":0,
+        "location":"Besides Coco Cola",
+        "isOpen":false,
+        "phoneNumber":"9010942283",
+        "email":"aryashu448@gmail.com",
+        "adminName":"Ashray"
+    },
+    {
+    
+        "name":"Chat Bandar",
+        "password":"aryashu1",
+        "rating":0,
+        "location":"Besides Coco Cola",
+        "isOpen":false,
+        "phoneNumber":"9010942283",
+        "email":"aryashu448@gmail.com",
+        "adminName":"Ashray"
+    },
+    {
+    
+        "name":"Fast Food Center",
+        "password":"aryashu1",
+        "rating":0,
+        "location":"Besides Coco Cola",
+        "isOpen":false,
+        "phoneNumber":"9010942283",
+        "email":"aryashu448@gmail.com",
+        "adminName":"Ashray"
+    },
+    {
+    
+        "name":"Soda Point",
+        "password":"aryashu1",
+        "rating":0,
+        "location":"Near Cococola",
+        "isOpen":true,
+        "phoneNumber":"9010942283",
+        "email":"aryashu448@gmail.com",
+        "adminName":"Ashray"
+    },
+    {
+    
+        "name":"Softy point",
+        "password":"aryashu1",
+        "rating":0,
+        "location":"Near Cococola",
+        "isOpen":true,
+        "phoneNumber":"9010942283",
+        "email":"aryashu448@gmail.com",
+        "adminName":"Ashray"
+    },
+    {
+    
+        "name":"Gandikota Dosa",
+        "password":"aryashu1",
+        "rating":0,
+        "location":"Near Cococola",
+        "isOpen":true,
+        "phoneNumber":"9010942283",
+        "email":"aryashu448@gmail.com",
+        "adminName":"Ashray"
+    },
+    {
+    
+        "name":"Heritage",
+        "password":"aryashu1",
+        "rating":0,
+        "location":"MBA",
+        "isOpen":true,
+        "phoneNumber":"9010942283",
+        "email":"aryashu448@gmail.com",
+        "adminName":"Ashray"
+    },
+    {
+    
+        "name":"Fast Food Center",
+        "password":"aryashu1",
+        "rating":0,
+        "location":"In MBA",
+        "isOpen":true,
+        "phoneNumber":"9010942283",
+        "email":"aryashu448@gmail.com",
+        "adminName":"Ashray"
+    },
+    {
+    
+        "name":"Fries Point",
+        "password":"aryashu1",
+        "rating":0,
+        "location":"In MBA",
+        "isOpen":true,
+        "phoneNumber":"9010942283",
+        "email":"aryashu448@gmail.com",
+        "adminName":"Ashray"
+    },
+    {
+    
+        "name":"Juice Point",
+        "password":"aryashu1",
+        "rating":0,
+        "location":"In MBA",
+        "isOpen":true,
+        "phoneNumber":"9010942283",
+        "email":"aryashu448@gmail.com",
+        "adminName":"Ashray"
+    },
+    {
+    
+        "name":"Bakery",
+        "password":"aryashu1",
+        "rating":0,
+        "location":"In MBA",
+        "isOpen":true,
+        "phoneNumber":"9010942283",
+        "email":"aryashu448@gmail.com",
+        "adminName":"Ashray"
+    }
+]
