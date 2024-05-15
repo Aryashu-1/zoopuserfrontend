@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import StoreProfileCard from '../../Components/StoreProfileCard/StoreProfileCard';
 import SearchBar from '../../Components/SearchBar/SearchBar';
 import { NavLink } from 'react-router-dom';
+import { UserContext } from '../../Contexts/UserContext/UserContext';
+
 
 const HomePage = () => {
   const storeCount = 10;
-
+  let [user,setUser] = useContext(UserContext)
+  console.log(user)
   const [stores,setStores] = useState([])
 
   useEffect(() => {

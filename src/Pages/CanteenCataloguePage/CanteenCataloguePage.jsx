@@ -12,7 +12,7 @@ const CanteenCataloguePage = () => {
   const [vegClicked, setVegClicked] = useState(false);
   const [eggClicked, setEggClicked] = useState(false);
   const [option, setOption] = useState('')
-
+  console.log(products)
   useEffect(() => {
     async function fetchData() {
       try {
@@ -38,6 +38,7 @@ const CanteenCataloguePage = () => {
 
         const response = await fetch(url, requestOptions);
         const result = await response.json();
+        
         setProducts([...result])
       } catch (error) {
         console.error('error', error);
