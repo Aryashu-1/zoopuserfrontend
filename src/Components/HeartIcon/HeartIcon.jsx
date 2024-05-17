@@ -1,12 +1,53 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { AiFillHeart } from 'react-icons/ai';
+import { UserContext } from '../../Contexts/UserContext/UserContext';
+import axios from 'axios';
 
-const HeartIcon = () => {
-  const [isLiked, setIsLiked] = useState(false);
-  
+const HeartIcon = (props) => {
+  const [isLiked, setIsLiked] = useState(props.like);
+  const [user,setUser] = useContext(UserContext)  
+  const userId = user._id
+  const preferrence = { "userId":userId,"storeId":props.storeId}
+  const handleClick = async () => {
+    if(user.name === undefined){    
+      alert("Login to add to favorites")
 
-  const handleClick = () => {
-    setIsLiked(!isLiked);
+  }
+  else{
+      if(isLiked === false){
+        const res = await axios.post("http://127.0.0.1:8000/user/preferences/store",preferrence)
+        console.log(res.data)
+      } 
+      else{
+            const url = `http://127.0.0.1:8000/user/preferences/store`
+            // const res = await axios.delete(url,preferrence)
+            // Define the endpoint
+            // const url = 'http://example.com/api/endpoint';
+
+
+
+    // Axios configuration
+    const config = {
+      method: 'delete',
+      url: url,
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      data: preferrence 
+    };
+
+    // Perform the request
+    axios(config)
+      .then(response => {
+        console.log('Response:', response.data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+          
+      }
+      setIsLiked(!isLiked);
+  }
   };
 
   return (

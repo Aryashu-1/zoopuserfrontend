@@ -1,14 +1,20 @@
 import React from 'react'
 import { NavLink, Navigate, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useContext } from 'react';
+import { StoresContext } from '../../Contexts/StoresContext/StoresContext';
 
-const CartCard = () => {
+const CartCard = (props) => {
   const nav = useNavigate()
+  const [stores,setStores] = useContext(StoresContext)
+  console.log(props.storeId)
+  const storeDetails = stores.find(store => store._id === props.storeId)
+  console.log(storeDetails)
   const [expanded, setExpanded] = useState(false);
   const checkout = () => {
     console.log('checkout')
     
-    nav('/cart/:cartid')
+    nav(`/cart/${props.storeId}`)
   }
   const deleteCart = () => {
     console.log('delete')
@@ -29,8 +35,8 @@ const CartCard = () => {
             
           </div>
           <div className='ml-4 text-[18px] font-medium'>
-            <h1>Gandikota Dosa</h1>
-            <h1>Annapurna</h1>
+            <h1>{storeDetails.name}</h1>
+            <h1>{storeDetails.location}</h1>
             <div className="flex items-center ml-3">
                   <img className='h-[19px] w-[17px]' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSts1lZDcV1iBgY9SlMe94ge-vEvXKviWhTXCqXg5Ypg&s" alt="" />
                   <span className="md:text-[16px] font-semibold">4.5</span>

@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from 'react'
 import RazorpayButton from '../RazorpayButton/RazorpayButton'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
+import { CartContext } from '../../Contexts/CartContext/CartContext';
 const Bill = () => {
   const [count, setCount] = useState(0);
+  const id = useParams()
+  let [cart,setCart] = useContext(CartContext)
+  console.log(cart)
+  console.log(id)
+  const filteredObjects = cart.filter(function(obj) {
+    return obj.storeId === id.cartid;
+});
+
+console.log(filteredObjects);
 
   function increment() {
     setCount(count + 1);
@@ -67,18 +77,18 @@ const Bill = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {itemsList.map((item, index) => (
+                    {filteredObjects.map((item, index) => (
                       <tr key={index} className={index % 2 === 0 ? "" : ""}>
-                        <td className="   text-[18px] font-medium w-[250px]">{item.itemName}</td>
+                        <td className="   text-[18px] font-medium w-[250px]">{item.name}</td>
                         { (
                             <div className='flex h-[20px] w-[69px] mt-3 mx-4'>
                                 <button className='w-[18px] h-[20px] rounded-l-[5px] font-extrabold bg-zoop items-center justify-center' onClick={decrement}>
                                   -
                                 </button>
                                 <div className='w-[33px] h-[20px] text-center'>
-                                  <h1 className='text-[17px]'>{item.quantity}</h1>
+                                  <h1 className='text-[17px]'>{item.qty}</h1>
                                 </div>
-                                <button className='bg-zoop items-center justify-center w-[18px] h-[20px] font-extrabold rounded-r-[5px] flex items-center justify-center' onClick={increment}>
+                                <button className='bg-zoop  w-[18px] h-[20px] font-extrabold rounded-r-[5px] flex items-center justify-center' onClick={increment}>
                                   +
                                 </button>
                             </div>
