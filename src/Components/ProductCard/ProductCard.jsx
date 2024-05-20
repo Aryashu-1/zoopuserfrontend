@@ -1,12 +1,37 @@
-import React, { useState } from 'react';
-import HeartIcon from '../HeartIcon/HeartIcon';
+import React, { useContext, useState } from 'react';
+import { CartContext } from '../../Contexts/CartContext/CartContext';
+import HeartIconProduct from '../HeartIconProduct/HeartIconProduct';
+import { UserContext } from '../../Contexts/UserContext/UserContext';
 
 const ProductCard = (props) => {
+  let [cart,setCart]= useContext(CartContext)
   const [count, setCount] = useState(0);
+  const [user,setUser] = useContext(UserContext)
 
   function increment() {
-    setCount(count + 1);
+    if(user.name === undefined){
+      alert("Login to add to Cart")
+    }
+    else{
+      setCount(count + 1);
+      // Check if the product already exists in the cart
+      const existingProductIndex = cart.findIndex(item => item._id === props.product._id);
+      console.log(existingProductIndex)
+      // If the product exists in the cart, update its quantity
+      if (existingProductIndex !== -1) {
+        const updatedCart = [...cart]; // Create a shallow copy of the cart array
+        updatedCart[existingProductIndex].qty += 1; // Increment the quantity
+        setCart(updatedCart);
+      } else {
+        // If the product is not in the cart, add it with the quantity
+        setCart([...cart, { ...props.product, qty: 1 }]);
+      }
+    }
+    
   }
+  
+  
+  
 
   function decrement() {
     if (count > 0) {
@@ -20,16 +45,15 @@ const ProductCard = (props) => {
         <div className="flex p-2 ">
           <div className=''>
             <img
-              src={props.image}
+              src={props.product.image}
               alt="Restaurant"
               className="w-[128px] h-[126px] md:h-[98px] md:rounded-[20px] object-cover rounded-[15px]"
             />
-            <HeartIcon/>
+            <HeartIconProduct/>
           </div>
           <div className='ml-4'>
-            <h1 className='text-[18px] font-bold md:text-[16px]'>Upma Dosa</h1>
-            <h1 className='text-[14px] md:text-[12px]'>Descrition</h1>
-            <h1 className='text-[18px] md:text-[16px] font-bold'>Rs. 45</h1>
+            <h1 className='text-[18px] font-bold md:text-[16px]'>{props.product.name}</h1>
+            <h1 className='text-[18px] md:text-[16px] font-bold'>Rs. {props.product.price}</h1>
             {count === 0 && (
               <button onClick={increment} className='text-[#57d742] flex items-center justify-center w-[74px] h-[26px] md:h-[24px]  border-[1.5px] mt-3 md:mt-1 ml-1 shadow-3xl border-[#b0b0b0] rounded-[10px]'>
                 ADD

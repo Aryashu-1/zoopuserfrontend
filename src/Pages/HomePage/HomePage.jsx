@@ -4,6 +4,7 @@ import SearchBar from '../../Components/SearchBar/SearchBar';
 import { NavLink } from 'react-router-dom';
 import { UserContext } from '../../Contexts/UserContext/UserContext';
 import { StoresContext } from '../../Contexts/StoresContext/StoresContext';
+import axios from 'axios';
 
 
 const HomePage = () => {
@@ -11,7 +12,7 @@ const HomePage = () => {
   let [user,setUser] = useContext(UserContext)
   console.log(user)
   const [stores,setStores] = useContext(StoresContext)
-
+  
   useEffect(() => {
     async function fetchData() {
       try {
@@ -26,9 +27,16 @@ const HomePage = () => {
           redirect: 'follow'
         };
 
+
         const response = await fetch(url, requestOptions);
         const result = await response.json();
         setStores([...result])
+        console.log(user._id)
+        const storesurl = `http://127.0.0.1:8000/user/preferences/store?userId=${user._id}`
+        console.log(storesurl)
+        const res = await axios.get(storesurl)
+        console.log(res)
+
       } catch (error) {
         console.error('error', error);
       }

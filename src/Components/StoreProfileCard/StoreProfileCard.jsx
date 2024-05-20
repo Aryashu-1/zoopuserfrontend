@@ -2,6 +2,7 @@ import HeartIcon from '../HeartIcon/HeartIcon';
 import { NavLink } from 'react-router-dom';
 
 function StoreProfileCard(props) {
+  const like = false
   return (
     <div className='justify-center'>
     <div className="">
@@ -15,7 +16,7 @@ function StoreProfileCard(props) {
                 className="md:w-[323px] md:h-[133px] object-cover rounded-[17px]"
               />
             </NavLink>
-            <HeartIcon />
+            <HeartIcon like={like} storeId={props.store._id}/>
           </div>
           <NavLink to={`store/${props.store._id}`} className="flex-grow">
             <div className="flex flex-col h-full justify-between">

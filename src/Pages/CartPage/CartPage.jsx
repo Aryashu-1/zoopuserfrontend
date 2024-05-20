@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CartCard from '../../Components/CartCard/CartCard'
 import { NavLink } from 'react-router-dom'
+import { CartContext } from '../../Contexts/CartContext/CartContext'
 
 const CartPage = () => {
+  let [cart,setCart] = useContext(CartContext)
+  console.log(cart)
+  const uniqueStores = [...new Set(cart.map(item => item.storeId))];
+  console.log(uniqueStores)
+  
   return (
     <div className='md:flex md:items-center md:justify-center'>
       <div className='md:w-800px'>
@@ -15,7 +21,9 @@ const CartPage = () => {
             </div>
             
         </div>
-        <CartCard/>
+          {
+          uniqueStores.map((store,index)=><CartCard storeId={store} index={index}/>)
+          }
       </div>
       
     </div>

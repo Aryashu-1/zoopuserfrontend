@@ -8,7 +8,7 @@ const Navbar = () => {
   let [user,setUser] = useContext(UserContext)
   function navigateTo(){
     console.log(user)
-    if(user === null){
+    if(user.name === undefined){
       nav('/signin')
     }
     else{
@@ -46,8 +46,8 @@ const Navbar = () => {
                   <FontAwesomeIcon icon={faUserCircle} size="2x" onClick={navigateTo}/>
                 </button>
                 <div className="hidden md:flex md:max-xl:flex hover:cursor-pointer">
-                  {user.name&& <NavLink href='/profile' className="md:text-white">Hello,{user.name}</NavLink>}
-                  {user.name === undefined && <NavLink href='/signin' className="md:text-white">SignIn</NavLink>}
+                  {user.name&& <NavLink to={'/profile'} className="md:text-white">Hello,{user.name}</NavLink>}
+                  {user.name === undefined && <NavLink to={'/signin'} className="md:text-white">SignIn</NavLink>}
                 </div>
               </div>
               <div className='flex '>

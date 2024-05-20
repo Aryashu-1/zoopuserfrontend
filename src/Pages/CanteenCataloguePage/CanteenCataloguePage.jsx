@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import ProductCard from '../../Components/ProductCard/ProductCard'
 import SearchBar from '../../Components/SearchBar/SearchBar'
 import { useState } from 'react'
@@ -6,14 +6,29 @@ import axios from 'axios'
 
 import Menu from '../../Components/Menu/Menu'
 import { NavLink, useParams } from 'react-router-dom'
+import { ProductsContext } from '../../Contexts/ProductsContext/ProductsContext'
+import { StoresContext } from '../../Contexts/StoresContext/StoresContext'
 
 const CanteenCataloguePage = (props) => {
-  const [products,setProducts] = useState([])
+  const [products,setProducts] = useContext(ProductsContext)
   const [vegClicked, setVegClicked] = useState(false);
   const [eggClicked, setEggClicked] = useState(false);
   const [option, setOption] = useState('')
+  const [stores,setStores] = useContext(StoresContext)
   console.log(products)
   const id = useParams()
+  console.log(id.storeid)
+  function getStoreById(objectList, id) {
+    for (let i = 0; i < objectList.length; i++) {
+        if (objectList[i]._id === id) {
+            return objectList[i];
+        }
+    }
+    return null;
+}
+
+const store = getStoreById(stores, id.storeid);
+
   useEffect(() => {
     async function fetchData() {
       try {
@@ -72,6 +87,7 @@ const CanteenCataloguePage = (props) => {
   };
   
   return (
+  
   <div className='flex items-center justify-center'>
     <div className='w-[800px]'>
         <div className='md:hidden'>
@@ -85,8 +101,8 @@ const CanteenCataloguePage = (props) => {
               <img className='h-[75px]' src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg" alt="" />
             </div>
             <div>
-            <div className='m-0'><h3 className=" text-[20px] font-semibold  ml-3">Gandikota Dosa</h3></div>  
-              <div className='m-0'><p className="text-[18px]  font-semibold  ml-3">Annapurna</p></div>
+            <div className='m-0'><h3 className=" text-[20px] font-semibold  ml-3">{store.name}</h3></div>  
+              <div className='m-0'><p className="text-[18px]  font-semibold  ml-3">{store.location}</p></div>
                <div className="m-0 flex justify-between items-center">
                 <div className="flex items-center ml-3">
                   <img className='h-[22px] w-[22px]' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSts1lZDcV1iBgY9SlMe94ge-vEvXKviWhTXCqXg5Ypg&s" alt="" />
@@ -134,7 +150,7 @@ const CanteenCataloguePage = (props) => {
     //   <div key={index}><ProductCard key={index} index={index} /></div>
       
     // ))
-    products.map((product,idx)=>(<div key={idx}><ProductCard name={product.name} image={product.image} key={idx}/></div>))
+    products.map((product,idx)=>(<div key={idx}><ProductCard product={product} key={idx}/></div>))
   }
   
   </div>
