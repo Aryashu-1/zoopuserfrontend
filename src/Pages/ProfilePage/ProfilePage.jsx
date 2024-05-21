@@ -3,8 +3,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AiFillHeart } from 'react-icons/ai';
 import { faUserCircle, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom'
+import OrderCard from '../../Components/OrderCard/OrderCard';
 
 const ProfilePage = () => {
+  const orders = {
+    "storeName":"Gandikota Dosa",
+    "Location":"In Annapurna",
+    "totalAmt":50,
+    "listOfItems":["Meals","Parotha","WaterBottle"],
+    "qtyOfItems":[1,2,3]
+  }
   return (
     <div>
       <div className=''>
@@ -17,7 +25,7 @@ const ProfilePage = () => {
           </div>   
         </div>
       </div>
-      <div className='flex flex-col  h-screen mt-[100px] from-zoop to-[#0275a8] rounded-t-full bg-gradient-to-b'>
+      <div className='flex flex-col  h-full mt-[100px] from-zoop to-[#0275a8] rounded-t-full bg-gradient-to-b'>
         <div class="  drop-shadow-2xl   ">
           <div class="absolute h-[145px] w-14 left-[31.8%] -top-16 ">  
             <img className=' fixed top-[-10] h-[145px] m-auto ' src="https://www.pngall.com/wp-content/uploads/5/Profile-PNG-File.png" alt="" />
@@ -62,10 +70,31 @@ const ProfilePage = () => {
               </button>
             </NavLink>
           </div>
+          <div className='mt-2'>
+            <div>
+              <h1 className='text-white font-medium text-[24px]'>Current Orders</h1>
+            </div>
+            {
+              Array.from({ length: 3 }, (_, index) => (
+                <NavLink to={'/orders'}><OrderCard  order={orders}/></NavLink>
+              ))
+            }
+          </div>
+          <div className='mt-2'>
+            <div className='m-2 pl-6'>
+              <h1 className='text-white font-medium text-[24px]'>Past Orders:</h1>
+            </div>
+            {
+              Array.from({ length: 3 }, (_, index) => (
+                <OrderCard order={orders}/>
+              ))
+            }
+          </div>
           
         </div>
          
       </div>
+      
       
       
     </div>
