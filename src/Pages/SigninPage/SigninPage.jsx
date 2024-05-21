@@ -84,12 +84,12 @@ let [flag,setFlag] = useState(0)
         </form>
         <p className="text-center text-lg py-3">
           Don't have an account ?
-          <button
+          <NavLink
             to="/Signup"
             className="underline px-3 text-blue-500 font-semibold text-lg"
           >
             Sign up
-          </button>
+          </NavLink>
         </p>
       </div>
       </div>
