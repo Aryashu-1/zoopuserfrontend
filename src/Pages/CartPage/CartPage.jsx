@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import CartCard from '../../Components/CartCard/CartCard'
 import { NavLink } from 'react-router-dom'
 import { CartContext } from '../../Contexts/CartContext/CartContext'
+import { StoresContext } from '../../Contexts/StoresContext/StoresContext'
 
 const CartPage = () => {
   let [cart,setCart] = useContext(CartContext)
@@ -9,9 +10,10 @@ const CartPage = () => {
   const uniqueStores = [...new Set(cart.map(item => item.storeId))];
   console.log(uniqueStores)
   
+  
   return (
-    <div className='md:flex md:items-center md:justify-center'>
-      <div className='md:w-800px'>
+    <div className='flex items-center justify-center '>
+    <div className='w-[800px]'>
         <div className='flex text-center shadow-xl pb-3'> 
             <NavLink href='/'>
               <img className='h-[35px] w-[35px] pl-2 pt-3' src="https://static.thenounproject.com/png/234369-200.png" />
@@ -21,9 +23,11 @@ const CartPage = () => {
             </div>
             
         </div>
+        <div className='md:flex md:flex-wrap  '>
           {
-          uniqueStores.map((store,index)=><CartCard storeId={store} index={index}/>)
+            uniqueStores.map((store,index)=><CartCard storeId={store} index={index}/>)
           }
+        </div>
       </div>
       
     </div>

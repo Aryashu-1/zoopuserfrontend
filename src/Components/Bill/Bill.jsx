@@ -54,8 +54,8 @@ console.log(filteredObjects);
   };
   return (
 
-    <div className='md:flex md:items-center md:justify-center'>
-      <div >
+    <div className='flex items-center justify-center '>
+      <div className='w-[800px]  '>
         <div className='flex text-center shadow-xl pb-3'> 
             <NavLink href='/cart'>
               <img className='h-[35px] w-[35px] pl-2 pt-3' src="https://static.thenounproject.com/png/234369-200.png" />
@@ -67,21 +67,21 @@ console.log(filteredObjects);
         </div>
         <div className=''>
           <div className='pt-16 px-4'>
-              <div className="w-[340px] mx-auto bg-white shadow-2xl rounded-[10px] p-2 " >
+              <div className="w-[340px] md:w-[717px] mx-auto bg-white shadow-2xl rounded-[10px] p-2 " >
                 <table className="w-full ">
                   <thead>
                     <tr className="">
-                      <th className=" text-[22px] w-[260px]">Item Name</th>
-                      <th className="text-[22px]  w-[66px]">Qty</th>
-                      <th className="text-[22px] w-[55px]">Amt(₹)</th>
+                      <th className="flex text-left text-[22px] w-[260px] md:w-[239px] ">Item Name</th>
+                      <th className="flex text-left text-[22px]  w-[66px] md:w-[239px]">Qty</th>
+                      <th className="text-[22px] w-[55px] md:w-[239px]">Amt(₹)</th>
                     </tr>
                   </thead>
                   <tbody>
                     {filteredObjects.map((item, index) => (
                       <tr key={index} className={index % 2 === 0 ? "" : ""}>
-                        <td className="   text-[18px] font-medium w-[250px]">{item.name}</td>
+                        <td className="   text-[18px] font-medium w-[250px] md:w-[239px] ">{item.name}</td>
                         { (
-                            <div className='flex h-[20px] w-[69px] mt-3 mx-4'>
+                            <div className='flex h-[20px] w-[69px] mt-3 mx-4 md:w-[239px] '>
                                 <button className='w-[18px] h-[20px] rounded-l-[5px] font-extrabold bg-zoop items-center justify-center' onClick={decrement}>
                                   -
                                 </button>
@@ -94,17 +94,18 @@ console.log(filteredObjects);
                             </div>
                         )}
 
-                        <td className=" px-4 py-2 text-[18px] font-medium w-[55px]">{item.price.toFixed(2)}</td>
+                        <td className=" px-4 py-2 text-[18px] font-medium md:w-[239px]  w-[55px]">{item.price.toFixed(2)}</td>
                     </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
             </div>
-            <div className='mb-7 mx-2'>
+            <div className='mb-7 '>
               <h1 className='text-[16px] font-medium m-6 mb-3 mx-6'>Cooking Instructions</h1>
-              <div>
-                <input value={cookingInstructions} onChange={handleChange} className='h-[69px] w-[288px] rounded-[10px] ml-3 pl-6' type='text' placeholder='Add Cooking Instructions' ></input>
+              <div className=''>
+                <input value={cookingInstructions} onChange={handleChange} className='h-[69px] w-[288px] rounded-[10px]  ml-3 pl-6' type='text' placeholder='Add Cooking Instructions' ></input>
+
               </div>
             </div>
             <div className='m-7 pb-5'>
