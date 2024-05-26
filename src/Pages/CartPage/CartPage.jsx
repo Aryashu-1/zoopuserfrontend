@@ -15,7 +15,7 @@ const CartPage = () => {
     <div className='flex items-center justify-center '>
     <div className='w-[800px]'>
         <div className='flex text-center shadow-xl pb-3'> 
-            <NavLink href='/'>
+            <NavLink to={'/'}>
               <img className='h-[35px] w-[35px] pl-2 pt-3' src="https://static.thenounproject.com/png/234369-200.png" />
             </NavLink>
             <div className='ml-2  pl-2 pt-2 '>
