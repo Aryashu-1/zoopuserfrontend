@@ -46,11 +46,14 @@ const ProfilePage =  () => {
   console.log(favoriteStores)
     // Create a ref for the target div
     const targetRef = useRef(null);
-
+    const targetOrders = useRef(null)
     // Function to handle the scroll
     const scrollToDiv = () => {
       targetRef.current.scrollIntoView({ behavior: 'smooth' });
     };
+    const scrollToDivOrders= () =>{
+      targetOrders.current.scrollIntoView({behavior:'smooth'})
+    }
   return (
     <div>
       <div className=''>
@@ -102,13 +105,13 @@ const ProfilePage =  () => {
 
           </div>
           <div className='flex items-center justify-center mt-10 text-white text-20px'>
-            <NavLink to={'/orders'}>
+            <NavLink onClick={scrollToDivOrders}>
               <button className='flex items-center justify-center w-[218px] h-[56px] shadow-md shadow-white border-white border-2 rounded-[10px]'>
                 ORDERS
               </button>
             </NavLink>
           </div>
-          <div>
+          <div ref={targetOrders}>
             <div className='mt-2'>
               <div>
                 <h1 className='text-white font-medium text-[24px]'>Current Orders</h1>
