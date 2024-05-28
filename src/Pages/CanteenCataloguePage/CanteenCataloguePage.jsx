@@ -8,6 +8,7 @@ import Menu from '../../Components/Menu/Menu'
 import { NavLink, useParams } from 'react-router-dom'
 import { ProductsContext } from '../../Contexts/ProductsContext/ProductsContext'
 import { StoresContext } from '../../Contexts/StoresContext/StoresContext'
+import { get } from 'react-hook-form'
 
 const CanteenCataloguePage = (props) => {
   const [products,setProducts] = useContext(ProductsContext)
@@ -31,32 +32,11 @@ const store = getStoreById(stores, id.storeid);
 
   useEffect(() => {
     async function fetchData() {
+      console.log("producst")
       try {
-        const myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        
-      
-        const data = {
-          storeId: id.storeid  ,
-        };
+        const res = await axios.get(`http://127.0.0.1:8002/store/product?${id.storeid}`)
+        console.log(res.data);
 
-        // Construct query parameters from data object
-        const queryParams = Object.keys(data)
-          .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-          .join('&');
-
-        const url = `http://127.0.0.1:8000/store/product?${queryParams}`;
-
-        const requestOptions = {
-          method: 'GET',
-          headers: myHeaders,
-          redirect: 'follow'
-        };
-
-        const response = await fetch(url, requestOptions);
-        const result = await response.json();
-        
-        setProducts([...result])
       } catch (error) {
         console.error('error', error);
       }
@@ -64,6 +44,7 @@ const store = getStoreById(stores, id.storeid);
 
     fetchData();
   }, []);
+
 
 
   const handleVegClick = () => {

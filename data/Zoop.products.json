@@ -1,0 +1,386 @@
+[
+  {
+    "name": "Meals",
+    "isAvailable": true,
+    "category": "6655e8c09ac4709a856c7702",
+    "rating": 0,
+    "price": 30,
+    "image": "https://5.imimg.com/data5/IM/KH/GLADMIN-21954819/south-indian-full-meals.jpg",
+    "storeId": "6644f907a77778e4de8e1f4c",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Parata with Aloo Curry",
+    "isAvailable": true,
+    "category": "6655e8c09ac4709a856c7703",
+    "rating": 0,
+    "price": 45,
+    "image": "https://ministryofcurry.com/wp-content/uploads/2022/09/Aloo-Parathas-7-scaled.jpg",
+    "storeId": "6644f907a77778e4de8e1f4c",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Parata with Paneer Curry",
+    "isAvailable": true,
+    "category": "6655e8c09ac4709a856c7703",
+    "rating": 0,
+    "price": 50,
+    "image": "https://www.archanaskitchen.com/images/archanaskitchen/0-Archanas-Kitchen-Recipes/Articles/Fancy_Dinner_Achari_Paneer_Pudina_Laccha_Paratha_Pyaz_Boondi_Raita_8.jpg",
+    "storeId": "6644f907a77778e4de8e1f4c",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Idly",
+    "isAvailable": true,
+    "category": "6655e8c09ac4709a856c76fe",
+    "rating": 0,
+    "price": 25,
+    "image": "https://tayyaarfoods.com/wp-content/uploads/2020/02/idly-podi-image.jpg",
+    "storeId": "6644f907a77778e4de8e1f4c",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Tea",
+    "isAvailable": true,
+    "category": "6655ea9c9ac4709a856c770b",
+    "rating": 0,
+    "price": 15,
+    "image": "https://www.munatycooking.com/wp-content/uploads/2014/04/Indian-Tea-Karak-Chai-feature-image-2022-500x500.jpg",
+    "storeId": "6644f907a77778e4de8e1f4d",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Green Tea",
+    "isAvailable": true,
+    "category": "6655ea9c9ac4709a856c770b",
+    "rating": 0,
+    "price": 15,
+    "image": "https://www.munatycooking.com/wp-content/uploads/2014/04/Indian-Tea-Karak-Chai-feature-image-2022-500x500.jpg",
+    "storeId": "6644f907a77778e4de8e1f4d",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Lemon Tea",
+    "isAvailable": true,
+    "category": "6655ea9c9ac4709a856c770b",
+    "rating": 0,
+    "price": 15,
+    "image": "https://www.munatycooking.com/wp-content/uploads/2014/04/Indian-Tea-Karak-Chai-feature-image-2022-500x500.jpg",
+    "storeId": "6644f907a77778e4de8e1f4d",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Black Tea",
+    "isAvailable": true,
+    "category": "6655ea9c9ac4709a856c770b",
+    "rating": 0,
+    "price": 15,
+    "image": "https://www.munatycooking.com/wp-content/uploads/2014/04/Indian-Tea-Karak-Chai-feature-image-2022-500x500.jpg",
+    "storeId": "6644f907a77778e4de8e1f4d",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Instant Coffee",
+    "isAvailable": true,
+    "category": "6655ea9c9ac4709a856c770c",
+    "rating": 0,
+    "price": 25,
+    "image": "https://www.mashed.com/img/gallery/the-untold-truth-of-instant-coffee/intro-1590763183.jpg",
+    "storeId": "6644f907a77778e4de8e1f4d",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Black Coffee",
+    "isAvailable": true,
+    "category": "6655ea9c9ac4709a856c770c",
+    "rating": 0,
+    "price": 25,
+    "image": "https://www.mashed.com/img/gallery/the-untold-truth-of-instant-coffee/intro-1590763183.jpg",
+    "storeId": "6644f907a77778e4de8e1f4d",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Boost",
+    "isAvailable": true,
+    "category": "6655ea9c9ac4709a856c770d",
+    "rating": 0,
+    "price": 30,
+    "image": "https://i.pinimg.com/736x/9e/6f/9c/9e6f9cd2ea08cf1001e31b5c6dc0a906.jpg",
+    "storeId": "6644f907a77778e4de8e1f4d",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Bournvita",
+    "isAvailable": true,
+    "category": "6655ea9c9ac4709a856c770d",
+    "rating": 0,
+    "price": 30,
+    "image": "https://i.pinimg.com/originals/85/2f/89/852f89a108b01ff1fe110e58e4094148.jpg",
+    "storeId": "6644f907a77778e4de8e1f4d",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Filter Coffee",
+    "isAvailable": true,
+    "category": "6655ea9c9ac4709a856c770d",
+    "rating": 0,
+    "price": 35,
+    "image": "https://assets.zeezest.com/blogs/PROD_ZZ%20SEO%20Image%20Resizing%203%20(1)_1682323842298_thumb_1200.png?w=3840&q=75",
+    "storeId": "6644f907a77778e4de8e1f4d",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "KitKat",
+    "isAvailable": true,
+    "category": "6655ec209ac4709a856c7711",
+    "rating": 0,
+    "price": 25,
+    "image": "https://kumaribasket.com/wp-content/uploads/2020/10/Nestle-Kitkat-Chocolate1.jpg",
+    "storeId": "6644f907a77778e4de8e1f4e",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "MunchMax",
+    "isAvailable": true,
+    "category": "6655ec209ac4709a856c7711",
+    "rating": 0,
+    "price": 30,
+    "image": "https://static.wixstatic.com/media/057d74_b1eaf4b1fd8d4648a1abc96ff0edc024~mv2.jpeg/v1/fill/w_480,h_254,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/057d74_b1eaf4b1fd8d4648a1abc96ff0edc024~mv2.jpeg",
+    "storeId": "6644f907a77778e4de8e1f4e",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Milkybar",
+    "isAvailable": true,
+    "category": "6655ec209ac4709a856c7711",
+    "rating": 0,
+    "price": 20,
+    "image": "https://frugivore-storage.s3.amazonaws.com/media/package/img_one/2020-07-31/Nestle_Milkybar_25gm.jpg",
+    "storeId": "6644f907a77778e4de8e1f4e",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Perk",
+    "isAvailable": true,
+    "category": "6655ec209ac4709a856c7711",
+    "rating": 0,
+    "price": 15,
+    "image": "https://5.imimg.com/data5/JT/KY/MY-36741304/perk-chocolate.jpg",
+    "storeId": "6644f907a77778e4de8e1f4e",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Bounty",
+    "isAvailable": true,
+    "category": "6655ec209ac4709a856c7711",
+    "rating": 0,
+    "price": 30,
+    "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61hjQuBjRoL.jpg",
+    "storeId": "6644f907a77778e4de8e1f4e",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Mars",
+    "isAvailable": true,
+    "category": "6655ec209ac4709a856c7711",
+    "rating": 0,
+    "price": 25,
+    "image": "https://fetchnbuy.in/cdn/shop/products/MARS_Chocolate_Bar_42gr-700x700_grande.webp?v=1646032438",
+    "storeId": "6644f907a77778e4de8e1f4e",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Cococola",
+    "isAvailable": true,
+    "category": "6655ec209ac4709a856c7712",
+    "rating": 0,
+    "price": 20,
+    "image": "",
+    "storeId": "6644f907a77778e4de8e1f4e",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Pepsi",
+    "isAvailable": true,
+    "category": "6655ec209ac4709a856c7712",
+    "rating": 0,
+    "price": 15,
+    "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/app/images/products/sliding_image/283a.jpg?ts=1689327540",
+    "storeId": "6644f907a77778e4de8e1f4e",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Milkshake",
+    "isAvailable": true,
+    "category": "6655ec209ac4709a856c7712",
+    "rating": 0,
+    "price": 25,
+    "image": "https://5.imimg.com/data5/HE/DC/MY-6849189/milkshake.jpg",
+    "storeId": "6644f907a77778e4de8e1f4e",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Sprite",
+    "isAvailable": true,
+    "category": "6655ec209ac4709a856c7712",
+    "rating": 0,
+    "price": 10,
+    "image": "https://m.media-amazon.com/images/I/61slsTqQruL.jpg",
+    "storeId": "6644f907a77778e4de8e1f4e",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Fanta",
+    "isAvailable": true,
+    "category": "6655ec209ac4709a856c7712",
+    "rating": 0,
+    "price": 30,
+    "image": "https://www.grocebox.in/wp-content/uploads/2023/01/Fanta-Orange-Flavoured-Soft-Drink-2L.jpg",
+    "storeId": "6644f907a77778e4de8e1f4e",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Ice Cream",
+    "isAvailable": true,
+    "category": "6655ec209ac4709a856c7712",
+    "rating": 0,
+    "price": 35,
+    "image": "https://qph.cf2.quoracdn.net/main-qimg-1b2d16ee5f2118d3d85675dea618fe3e.webp",
+    "storeId": "6644f907a77778e4de8e1f4e",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Kulfi",
+    "isAvailable": true,
+    "category": "6655ec209ac4709a856c7712",
+    "rating": 0,
+    "price": 30,
+    "image": "https://www.archanaskitchen.com/images/archanaskitchen/Indian_Sweets_Mithai/Kesar_Pista_Kulfi_Recipe_Indian_Ice_Cream-1-2_400.jpg",
+    "storeId": "6644f907a77778e4de8e1f4e",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Cassata",
+    "isAvailable": true,
+    "category": "6655ec209ac4709a856c7712",
+    "rating": 0,
+    "price": 25,
+    "image": "https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=900/app/images/products/sliding_image/519996a.jpg",
+    "storeId": "6644f907a77778e4de8e1f4e",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Badam Milk",
+    "isAvailable": true,
+    "category": "6655ec209ac4709a856c7712",
+    "rating": 0,
+    "price": 15,
+    "image": "https://www.bigbasket.com/media/uploads/p/l/20003886_4-godrej-jersey-flavoured-milk-badam.jpg",
+    "storeId": "6644f907a77778e4de8e1f4e",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Upma",
+    "isAvailable": false,
+    "category": "6655e8c09ac4709a856c7701",
+    "rating": 0,
+    "price": 50,
+    "image": "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/08/upma-recipe.jpg",
+    "storeId": "6644f907a77778e4de8e1f4c",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Pongal",
+    "isAvailable": false,
+    "category": "6655e8c09ac4709a856c7701",
+    "rating": 0,
+    "price": 50,
+    "image": "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/08/upma-recipe.jpg",
+    "storeId": "6644f907a77778e4de8e1f4c",
+    "discount": 0,
+        "isVeg": true
+    
+  },
+  {
+    "name": "Punugulu",
+    "isAvailable": false,
+        "isVeg": true,
+    "category": "6655e8c09ac4709a856c76ff",
+    "rating": 0,
+    "price": 50,
+    "image": "https://www.indianhealthyrecipes.com/wp-content/uploads/2021/08/upma-recipe.jpg",
+    "storeId": "6644f907a77778e4de8e1f4c",
+    "discount": 0
+    
+  },
+  {
+    "name": "Spl. Dosa",
+    "isAvailable": false,
+    "category": "6655e8c09ac4709a856c7704",
+    "rating": 0,
+    "price": 30,
+    "image": "https://ministryofcurry.com/wp-content/uploads/2023/12/crispy-dosa_-3.jpg",
+    "storeId": "6644f907a77778e4de8e1f4c",
+    "discount": 0,
+    "isVeg": true
+    
+  }
+]
