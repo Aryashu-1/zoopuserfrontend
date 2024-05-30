@@ -8,7 +8,7 @@ import Menu from '../../Components/Menu/Menu'
 import { NavLink, useParams } from 'react-router-dom'
 import { ProductsContext } from '../../Contexts/ProductsContext/ProductsContext'
 import { StoresContext } from '../../Contexts/StoresContext/StoresContext'
-import { get } from 'react-hook-form'
+
 
 const CanteenCataloguePage = (props) => {
   const [products,setProducts] = useContext(ProductsContext)
@@ -34,8 +34,11 @@ const store = getStoreById(stores, id.storeid);
     async function fetchData() {
       console.log("producst")
       try {
-        const res = await axios.get(`http://127.0.0.1:8002/store/product?${id.storeid}`)
-        console.log(res.data);
+        const url = `http://127.0.0.1:8000/store/product?storeId=${id.storeid}`
+        console.log(url)
+        const res = await axios.get(url)
+        console.log(res);
+        setProducts(res.data)
 
       } catch (error) {
         console.error('error', error);
