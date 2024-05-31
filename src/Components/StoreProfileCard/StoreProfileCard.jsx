@@ -1,8 +1,14 @@
+import { useContext, useState,useEffect } from 'react';
 import HeartIcon from '../HeartIcon/HeartIcon';
 import { NavLink } from 'react-router-dom';
+import { UserContext } from '../../Contexts/UserContext/UserContext';
 
 function StoreProfileCard(props) {
-  const like = false
+
+  
+  const [user,setUser] = useContext(UserContext)
+
+  console.log(props.like)
   return (
     <div className='justify-center'>
     <div className="">
@@ -16,7 +22,7 @@ function StoreProfileCard(props) {
                 className="md:w-[323px] md:h-[133px] object-cover rounded-[17px]"
               />
             </NavLink>
-            <HeartIcon like={like} storeId={props.store._id}/>
+            <HeartIcon like={props.like} storeId={props.store._id}/>
           </div>
           <NavLink to={`store/${props.store._id}`} className="flex-grow">
             <div className="flex flex-col h-full justify-between">
