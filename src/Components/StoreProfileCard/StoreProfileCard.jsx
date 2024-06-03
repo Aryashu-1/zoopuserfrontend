@@ -8,7 +8,6 @@ function StoreProfileCard(props) {
   
   const [user,setUser] = useContext(UserContext)
 
-  console.log(props.like)
   return (
     <div className='justify-center'>
     <div className="">
