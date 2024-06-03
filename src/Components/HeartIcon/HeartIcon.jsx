@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const HeartIcon = (props) => {
   let [isLiked, setIsLiked] = useState(props.like);
-  console.log(props.like)
+
   const [user,setUser] = useContext(UserContext)  
   const userId = user._id
   const preferrence = { "userId":userId,"storeId":props.storeId}
@@ -59,9 +59,7 @@ const HeartIcon = (props) => {
     }, [isLiked]);
   return (
     <div>
-      {
-        console.log(isLiked)
-      }
+      
       <AiFillHeart
         className={`h-[34px] w-[26px] absolute top-4 left-4 cursor-pointer ${
           isLiked

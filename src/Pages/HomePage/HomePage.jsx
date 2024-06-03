@@ -10,6 +10,7 @@ import axios from 'axios';
 const HomePage = () => {
   const storeCount = 10;
   let [user,setUser] = useContext(UserContext)
+ 
   const [like,setLike] = useState(false)
   console.log(user)
   const [stores,setStores] = useContext(StoresContext)
@@ -36,7 +37,7 @@ const HomePage = () => {
         const storesurl = `http://127.0.0.1:8000/user/preferences/store?userId=${user._id}`
         console.log(storesurl)
         const res = await axios.get(storesurl)
-        console.log(res)
+       
         setLikedStores(res.data)
         
 
@@ -50,10 +51,11 @@ const HomePage = () => {
   
   function storeElements(store,index) {
     
-      console.log(likedStores);
+      
       
       let ans = likedStores.includes(store._id);
-      console.log(ans);
+      
+
       
       
       return (
@@ -66,7 +68,7 @@ const HomePage = () => {
   const storeElementsList = stores.map((store, index) => storeElements(store, index, likedStores));
   return (
     <div>
-      <SearchBar />
+      <SearchBar data={stores} />
       <div className='overflow-auto flex-grow h-screen bg-gray-100 py-1'>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4 bg-gray-100">
           {

@@ -101,7 +101,7 @@ const CanteenCataloguePage = (props) => {
           </div>
         </div>
         <Menu />
-        <SearchBar />
+        <SearchBar  data={products}/>
         <div className='flex w-[200px] ml-9 mb-1 md:mt-0'>
           <div className='flex h-[25px] text-green-600'>
             <div className='flex justify-center ml-3 mr-2'>

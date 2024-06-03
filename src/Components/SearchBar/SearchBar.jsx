@@ -1,24 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Filter from '../Filter/Filter';
+import StoreProfileCard from '../StoreProfileCard/StoreProfileCard';
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
   const suggestionsRef = useRef(null);
-  const foodItems = [
-    'Idly',
-    'Dosa',
-    'Vada',
-    'Puri',
-    'Chapathi',
-    'Pulka',
-    'Upma',
-    'Samosa',
-    'Kachori',
-    'Bonda',
-  ];
+  const list = props.data || [];
+  const [searchItems, setSearchItems] = useState([]);
 
+  useEffect(() => {
+    setSearchItems(list.map((item) => ({
+      name: item.name,
+      location: item.location,
+    })));
+  }, [list]);
+  console.log(searchItems)
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (suggestionsRef.current && !suggestionsRef.current.contains(event.target)) {
@@ -34,8 +32,8 @@ const SearchBar = () => {
   const handleChange = (event) => {
     const { value } = event.target;
     setSearchQuery(value);
-    const filteredItems = foodItems.filter((item) =>
-      item.toLowerCase().startsWith(value.toLowerCase())
+    const filteredItems = searchItems.filter((item) =>
+      item.name.toLowerCase().startsWith(value.toLowerCase())
     );
     setSuggestions(value.trim() !== '' ? filteredItems : []);
   };
@@ -56,7 +54,7 @@ const SearchBar = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className='justify-center box-content mb-5 h-[50px] w-[80vw] md:w-[500px] mt-[15px] md:mt-0 py-1 ml-[30px]'>
+      <div className="justify-center box-content mb-5 h-[50px] w-[80vw] md:w-[500px] mt-[15px] md:mt-0 py-1 ml-[30px]">
         <div className="flex justify-center w-[80vm] md:w-[500px] relative">
           <div className="flex items-center rounded-[30px] mt-1 shadow-3xl h-[45px] w-[546px] p-2 border-gray-300 border-[0.5px]">
             <input
@@ -80,17 +78,19 @@ const SearchBar = () => {
           </div>
           {suggestions.length > 0 && (
             <ul ref={suggestionsRef} className="absolute z-10 top-[51px] left-[10px] w-[412px] bg-white border-gray-300 rounded-b-lg shadow-lg">
-
               {suggestions.map((suggestion, index) => (
                 <li
                   key={index}
                   className="px-4 py-2 cursor-pointer hover:bg-gray-100"
                   onClick={() => {
-                    setSearchQuery(suggestion);
-                    setSuggestions([]); 
+                    setSearchQuery(suggestion.name);
+                    setSuggestions([]);
                   }}
                 >
-                  {suggestion}
+                  <div>
+                    <strong>{suggestion.name}</strong><br />
+                    <small>{suggestion.location}</small>
+                  </div>
                 </li>
               ))}
             </ul>
