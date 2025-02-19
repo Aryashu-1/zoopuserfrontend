@@ -10,7 +10,7 @@ import ProfilePage from "./Pages/ProfilePage/ProfilePage"
 import OrdersPage from "./Pages/OrdersPage/OrdersPage"
 import Bill from "./Components/Bill/Bill"
 import OrderCard from "./Components/OrderCard/OrderCard"
-
+// npm run dev
 function App() {
 
   const router = createBrowserRouter([

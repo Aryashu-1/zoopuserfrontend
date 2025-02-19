@@ -21,7 +21,7 @@ const HomePage = () => {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
-        const url = `http://127.0.0.1:8000/store/`;
+        const url = `http://127.0.0.1:8002/store/`;
 
         const requestOptions = {
           method: 'GET',

@@ -16,6 +16,9 @@ const OrdersPage = () => {
         "orderTime":"18/05/2024 12:30pm",
         "CookingInstructions":"Do not add onion "
       }
+     const billamount = ()=>{
+          
+      }
   return (
     <div className='bg-gray-100'>
       <div className=''>

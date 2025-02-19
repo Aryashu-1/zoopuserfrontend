@@ -7,9 +7,9 @@ function RazorpayButton() {
   const nav = useNavigate()
 
   const [Razorpay] = useRazorpay();
-  const createOrderURL = "http://localhost:8000/payment/order"
-  const validateOrderURL = "http://localhost:8000/payment/validateOrder"
-  const cartCreateURL = 'http://127.0.0.1:8000/user/cart'
+  const createOrderURL = "http://localhost:8002/payment/order"
+  const validateOrderURL = "http://localhost:8002/payment/validateOrder"
+  const cartCreateURL = 'http://127.0.0.1:8002/user/cart'
 
   const handlePayment = async (e) => {
 
