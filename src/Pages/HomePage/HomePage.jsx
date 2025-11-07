@@ -21,15 +21,15 @@ const HomePage = () => {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
-        const url = `http://127.0.0.1:8002/store/`;
+        const url = `http://127.0.0.1:8000/store/stores`;
 
         const requestOptions = {
           method: 'GET',
-          headers: myHeaders,
+          
           redirect: 'follow'
         };
 
-
+        console.log("stores")
         const response = await fetch(url, requestOptions);
         const result = await response.json();
         setStores([...result])

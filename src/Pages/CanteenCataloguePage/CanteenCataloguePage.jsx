@@ -28,11 +28,11 @@ const CanteenCataloguePage = (props) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const url = `http://127.0.0.1:8002/store/product?storeId=${id}`;
+        const url = `http://127.0.0.1:8000/store/product?storeId=${id}`;
         const res = await axios.get(url);
         setProducts(res.data);
 
-        const productsurl = `http://127.0.0.1:8002/user/preferences/product?userId=${user._id}`;
+        const productsurl = `http://127.0.0.1:8000/user/preferences/product?userId=${user._id}`;
         const rs = await axios.get(productsurl);
         setLikedProducts(rs.data);
 
