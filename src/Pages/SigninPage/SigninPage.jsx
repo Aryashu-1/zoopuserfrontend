@@ -42,7 +42,7 @@ let [flag,setFlag] = useState(0)
         
         <form className="px-10 m-2" onSubmit={handleSubmit(handleFormSubmit)}>
           {
-            flag=== 1 && <h1 className="text-red-700 font-semibold">Invalid Details</h1>
+            flag=== 1 && <h1 className="text-red-700 font-semibold">Invalidd  Details</h1>
           }
           <div className="py-3">
             {" "}
