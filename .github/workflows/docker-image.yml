@@ -13,17 +13,19 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Build Docker image
-      run: docker build -t my-image:latest .
-
-    - name: Save image as TAR
-      run: docker save my-image:latest -o my-image.tar
-
-    - name: Verify TAR exists
-      run: ls -lh my-image.tar
-
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v3
       with:
-        name: docker-image
-        path: my-image.tar
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build image
+      run: |
+        IMAGE_NAME=ghcr.io/${{ github.repository }}/app:latest
+        docker build -t $IMAGE_NAME .
+        echo "IMAGE_NAME=$IMAGE_NAME" >> $GITHUB_ENV
+
+    - name: Push image
+      run: |
+        docker push $IMAGE_NAME
